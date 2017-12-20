@@ -4,16 +4,31 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-
+import { RouterModule} from '@angular/router';
+import { DogParkComponent } from './dog-park/dog-park.component';
+import { PlayAreaComponent } from './play-area/play-area.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component'
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    DogParkComponent,
+    PlayAreaComponent,
+    PageNotFoundComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    RouterModule.forRoot([
+      {path: "home", component: HomeComponent},
+      {path: "dogpark", component: DogParkComponent},
+      {path: "playarea", component: PlayAreaComponent},
+      {path: "", component: HomeComponent},
+      {path: "**", component: PageNotFoundComponent}
+    ], {useHash: true})
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],
