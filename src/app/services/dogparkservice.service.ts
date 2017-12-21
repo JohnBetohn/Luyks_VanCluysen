@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class DogParkService {
     constructor(private _http: HttpClient) {}
         get List(): Observable<IDogParkRoot> {
-            return this._http.get<IDogParkRoot>('http://datasets.antwerpen.be/v4/gis/hondenloopzone.json')
+            return this._http.get<IDogParkRoot>('http://datasets.antwerpen.be/v4/gis/hondenloopzone.json');
 
         }
     }
