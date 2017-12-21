@@ -9,13 +9,10 @@ import { DogParkComponent } from './dog-park/dog-park.component';
 import { PlayAreaComponent } from './play-area/play-area.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-<<<<<<< HEAD
-import { WeatherComponent } from './weather/weather.component'
-=======
+import { WeatherComponent } from './weather/weather.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
->>>>>>> 578295667f80ad6b1b681542e198f003b0b0e075
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,10 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     PlayAreaComponent,
     PageNotFoundComponent,
     NavBarComponent,
-<<<<<<< HEAD
     WeatherComponent
-=======
->>>>>>> 578295667f80ad6b1b681542e198f003b0b0e075
   ],
   imports: [
     BrowserModule,
