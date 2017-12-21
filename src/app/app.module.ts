@@ -8,7 +8,10 @@ import { RouterModule} from '@angular/router';
 import { DogParkComponent } from './dog-park/dog-park.component';
 import { PlayAreaComponent } from './play-area/play-area.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component'
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +20,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component'
     DogParkComponent,
     PlayAreaComponent,
     PageNotFoundComponent,
-    NavBarComponent
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,10 +31,13 @@ import { NavBarComponent } from './nav-bar/nav-bar.component'
       {path: "playarea", component: PlayAreaComponent},
       {path: "", component: HomeComponent},
       {path: "**", component: PageNotFoundComponent}
-    ], {useHash: true})
+    ], {useHash: true}),
+    FormsModule,
+    HttpClientModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
