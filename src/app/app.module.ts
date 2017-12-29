@@ -12,11 +12,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { WeatherComponent } from './weather/weather.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-<<<<<<< HEAD
 import { PlayAreaService } from './services/play-area.service';
-=======
 import { DogParkService } from './services/dogpark.service';
->>>>>>> ccf9e4cbeb256ee110c5ae60083c9a20910ce1b1
 
 @NgModule({
   declarations: [
@@ -44,11 +41,8 @@ import { DogParkService } from './services/dogpark.service';
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [
-<<<<<<< HEAD
-    PlayAreaService
-=======
+    PlayAreaService,
     DogParkService
->>>>>>> ccf9e4cbeb256ee110c5ae60083c9a20910ce1b1
   ],
   bootstrap: [AppComponent]
 })
