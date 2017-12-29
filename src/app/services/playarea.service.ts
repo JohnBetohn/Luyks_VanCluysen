@@ -1,14 +1,15 @@
 import { Observable} from 'rxjs/Observable';
-import { HttpClient } from '@angular/common/http/src/client';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class DogParkService {
+export class PlayAreaService {
     constructor(private _http: HttpClient) {}
         get List(): Observable<IPlayAreaRoot> {
             return this._http.get<IPlayAreaRoot>('http://datasets.antwerpen.be/v4/gis/speelterreinen.json');
 
         }
+
     }
     export interface Paging {
         records: number;
