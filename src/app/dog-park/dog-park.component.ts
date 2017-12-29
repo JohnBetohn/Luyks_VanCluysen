@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DogParkService, IDogParkRoot } from '../services/dogpark.service'
 
 @Component({
   selector: 'app-dog-park',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dog-park.component.scss']
 })
 export class DogParkComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  lijst : IDogParkRoot[];
+  constructor(private service : DogParkService) { 
   }
-
+  ngOnInit() {
+    this.service.Lijst.subscribe(d => this.lijst = d);
+  }
 }
