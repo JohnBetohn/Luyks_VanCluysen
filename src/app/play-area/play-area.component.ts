@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Datum, PlayAreaService, IPlayAreaRoot } from '../services/play-area.service';
 
 @Component({
   selector: 'app-play-area',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayAreaComponent implements OnInit {
 
-  constructor() { }
+  playareas : IPlayAreaRoot;
+
+  constructor(private _svc : PlayAreaService) { }
 
   ngOnInit() {
+    this._svc.getList().subscribe(result => this.playareas = result);
   }
 
 }

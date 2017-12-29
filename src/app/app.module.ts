@@ -12,6 +12,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { WeatherComponent } from './weather/weather.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PlayAreaService } from './services/play-area.service';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [
+    PlayAreaService
   ],
   bootstrap: [AppComponent]
 })
