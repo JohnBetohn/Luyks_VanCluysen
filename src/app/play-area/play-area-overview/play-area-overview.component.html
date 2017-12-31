@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-header">
+    Closest Playarea
+  </div>
+  <div class="card-block">
+    <form>
+      <div class="md-form">
+        <i class="glyphicon glyphicon-map-marker"></i>
+        <input #location type="search" id="id_location" class="form-control" mdbActive>
+        <label for="id_location">Give your location</label>
+      </div>
+    </form>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Distance</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Alerts</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let playarea of playareas.data">
+                <td>IDC</td>
+                <td>{{playarea.naam}}</td>
+                <td>{{playarea.straat}} {{playarea.huisnummer}}, {{playarea.district}}</td>
+                <td>{{playarea.opmerking}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>

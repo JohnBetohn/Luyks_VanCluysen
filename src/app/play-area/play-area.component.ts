@@ -8,12 +8,10 @@ import { Datum, PlayAreaService, IPlayAreaRoot } from '../services/play-area.ser
 })
 export class PlayAreaComponent implements OnInit {
 
-  playareas : IPlayAreaRoot;
-
-  constructor(private _svc : PlayAreaService) { }
+  constructor() { }
 
   ngOnInit() {
-    this._svc.getList().subscribe(result => this.playareas = result);
+    
   }
 
 }

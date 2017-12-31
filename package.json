@@ -27,6 +27,7 @@
     "font-awesome": "4.7.0",
     "hammerjs": "2.0.8",
     "mathjs": "^3.18.0",
+    "ngmap": "git://github.com/allenhwkim/angularjs-google-maps.git",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },

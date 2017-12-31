@@ -7,6 +7,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { RouterModule} from '@angular/router';
 import { DogParkComponent } from './dog-park/dog-park.component';
 import { PlayAreaComponent } from './play-area/play-area.component';
+import { PlayAreaOverviewComponent} from './play-area/play-area-overview/play-area-overview.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { WeatherComponent } from './weather/weather.component';
@@ -14,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PlayAreaService } from './services/play-area.service';
 import { DogParkService } from './services/dogpark.service';
+import { PlayAreaAlertsComponent } from './play-area/play-area-alerts/play-area-alerts.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { DogParkService } from './services/dogpark.service';
     PlayAreaComponent,
     PageNotFoundComponent,
     NavBarComponent,
-    WeatherComponent
+    WeatherComponent,
+    PlayAreaOverviewComponent,
+    PlayAreaAlertsComponent
   ],
   imports: [
     BrowserModule,
