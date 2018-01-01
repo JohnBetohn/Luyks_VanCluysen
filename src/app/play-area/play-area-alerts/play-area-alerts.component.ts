@@ -8,18 +8,20 @@ import { Datum, PlayAreaService, IPlayAreaRoot } from '../../services/play-area.
 })
 export class PlayAreaAlertsComponent implements OnInit {
 
-  allplayareas : IPlayAreaRoot;
   playareas : IPlayAreaRoot;
   data: Datum[];
 
   constructor(private _svc : PlayAreaService) { }
 
   ngOnInit() {
+    this._svc.getList().subscribe(result => this.playareas = result);
+  }
+
+  alertSearch() {
     this.data = [];
-    this._svc.getList().subscribe(result => this.allplayareas = result);
-    for (let index = 0; index < this.allplayareas.data.length; index++) {
-      const element = this.allplayareas.data[index];
-      if (element.opmerking.length > 1 || element.opmerking != null) {
+    for (let index = 0; index < this.playareas.data.length; index++) {
+      let element = this.playareas.data[index];
+      if (element.opmerking) {
         this.data.push(element);
       }
     }
