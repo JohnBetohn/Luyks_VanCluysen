@@ -17,6 +17,7 @@ import { PlayAreaService } from './services/play-area.service';
 import { DogParkService } from './services/dogpark.service';
 import { PlayAreaAlertsComponent } from './play-area/play-area-alerts/play-area-alerts.component';
 import { DogParkSearchComponent } from './dog-park/dog-park-search/dog-park-search.component';
+import { DogParkSpotlightComponent } from './dog-park/dog-park-spotlight/dog-park-spotlight.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DogParkSearchComponent } from './dog-park/dog-park-search/dog-park-sear
     WeatherComponent,
     PlayAreaOverviewComponent,
     PlayAreaAlertsComponent,
-    DogParkSearchComponent
+    DogParkSearchComponent,
+    DogParkSpotlightComponent
   ],
   imports: [
     BrowserModule,
