@@ -15,10 +15,11 @@ export class PlayAreaAlertsComponent implements OnInit {
   constructor(private _svc : PlayAreaService) { }
 
   ngOnInit() {
+    this.data = [];
     this._svc.getList().subscribe(result => this.allplayareas = result);
     for (let index = 0; index < this.allplayareas.data.length; index++) {
       const element = this.allplayareas.data[index];
-      if (element.opmerking.length > 1) {
+      if (element.opmerking.length > 1 || element.opmerking != null) {
         this.data.push(element);
       }
     }
