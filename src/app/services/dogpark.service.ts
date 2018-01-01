@@ -5,8 +5,8 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class DogParkService {
         constructor(private _http: HttpClient) {}
-        get Lijst() : Observable<IDogParkRoot[]> {
-                return this._http.get<IDogParkRoot[]>("http://datasets.antwerpen.be/v4/gis/hondenloopzone.json");
+         getList() : Observable<IDogParkRoot> {
+                return this._http.get<IDogParkRoot>("http://datasets.antwerpen.be/v4/gis/hondenloopzone.json");
         }
     }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DogParkService, IDogParkRoot } from '../services/dogpark.service'
+import { Datum, DogParkService, IDogParkRoot } from '../services/dogpark.service'
 
 @Component({
   selector: 'app-dog-park',
@@ -7,10 +7,24 @@ import { DogParkService, IDogParkRoot } from '../services/dogpark.service'
   styleUrls: ['./dog-park.component.scss']
 })
 export class DogParkComponent implements OnInit {
-  lijst : IDogParkRoot[];
-  constructor(private service : DogParkService) { 
+  
+    dogparks : IDogParkRoot;
+    data: Datum[];
+  
+    constructor(private _svc : DogParkService) { 
+      this._svc.getList().subscribe(result => this.dogparks = result);
+    }
+    ngOnInit() {
+      function Test() {
+        this.data = [];
+        for (let index = 0; index < this.dogparks.data.length; index++) {
+          let  element = this.dogparks.data[index];
+          if (element.postcode == '2610' || element.postcode != null) {
+            this.data.push(element);
+            console.log("Check" + index)
+          }
+        } 
+      }
+    }
   }
-  ngOnInit() {
-    this.service.Lijst.subscribe(d => this.lijst = d);
-  }
-}
+  

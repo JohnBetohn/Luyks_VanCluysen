@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PlayAreaService } from './services/play-area.service';
 import { DogParkService } from './services/dogpark.service';
 import { PlayAreaAlertsComponent } from './play-area/play-area-alerts/play-area-alerts.component';
+import { DogParkSearchComponent } from './dog-park/dog-park-search/dog-park-search.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PlayAreaAlertsComponent } from './play-area/play-area-alerts/play-area-
     NavBarComponent,
     WeatherComponent,
     PlayAreaOverviewComponent,
-    PlayAreaAlertsComponent
+    PlayAreaAlertsComponent,
+    DogParkSearchComponent
   ],
   imports: [
     BrowserModule,
