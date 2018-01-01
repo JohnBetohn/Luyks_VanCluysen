@@ -1,27 +1,26 @@
 <div class="card">
   <div class="card-header">
-    Closest Playarea
+    Search Playarea
   </div>
   <div class="card-block">
     <form>
       <div class="md-form">
         <i class="glyphicon glyphicon-map-marker"></i>
-        <input #location type="search" id="id_location" class="form-control" mdbActive>
-        <label for="id_location">Give your location</label>
+        <input #location type="search" id="id_location" class="form-control" [(ngModel)]="Search" mdbActive>
+        <label for="id_location">Give a location</label>
       </div>
+      <button type="button" class="button" value="Search For PlayArea" (click)="playAreaSearch()">Search For PlayArea</button>
     </form>
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>Distance</th>
                 <th>Name</th>
                 <th>Location</th>
                 <th>Alerts</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let playarea of playareas.data">
-                <td>IDC</td>
+            <tr *ngFor="let playarea of data">
                 <td>{{playarea.naam}}</td>
                 <td>{{playarea.straat}} {{playarea.huisnummer}}, {{playarea.district}}</td>
                 <td>{{playarea.opmerking}}</td>

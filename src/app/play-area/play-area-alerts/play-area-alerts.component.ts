@@ -10,6 +10,7 @@ export class PlayAreaAlertsComponent implements OnInit {
 
   playareas : IPlayAreaRoot;
   data: Datum[];
+  _search : string = "Regenboogpark - Waalse Kaai";
 
   constructor(private _svc : PlayAreaService) { }
 
@@ -17,13 +18,24 @@ export class PlayAreaAlertsComponent implements OnInit {
     this._svc.getList().subscribe(result => this.playareas = result);
   }
 
-  alertSearch() {
+  alertSearch(){
     this.data = [];
     for (let index = 0; index < this.playareas.data.length; index++) {
       let element = this.playareas.data[index];
-      if (element.opmerking) {
-        this.data.push(element);
+      if(this._search == element.naam){
+        if (element.opmerking) {
+          this.data.push(element);
+        }
       }
     }
+  }
+
+  get Search() {
+    return this._search;
+  }
+
+  set Search(value: string) {
+    this._search = value;
+    this.alertSearch();
   }
 }
