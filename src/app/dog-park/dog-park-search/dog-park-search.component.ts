@@ -7,10 +7,10 @@ import { DogParkService, IDogParkRoot, Datum } from '../../services/dogpark.serv
   styleUrls: ['./dog-park-search.component.scss']
 })
 export class DogParkSearchComponent implements OnInit {
-  dogparks : IDogParkRoot;
+  dogparks: IDogParkRoot;
   data: Datum[];
-  constructor(private _svc : DogParkService) { }
-private _search: string = "Enter postcode"
+  constructor(private _svc: DogParkService) { }
+  private _search: string = "Enter postcode"
   ngOnInit() {
     this._svc.getList().subscribe(result => this.dogparks = result);
   }
