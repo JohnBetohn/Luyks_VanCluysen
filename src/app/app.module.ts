@@ -22,7 +22,6 @@ import { PlayAreaMapComponent } from './play-area/play-area-map/play-area-map.co
 import { AgmCoreModule } from '@agm/core'
 import { DogParkMapComponent } from './dog-park/dog-park-map/dog-park-map.component';
 import { FooterComponent } from './footer/footer.component';
-import { AgmCoreModule} from '@agm/core'
 @NgModule({
   declarations: [
     AppComponent,
