@@ -1,1 +1,6 @@
-<p>tttt</p>
+<a class="btn btn-primary" (click)="markMap">Search featured dogpark</a>
+
+<agm-map [latitude] = "lat" [longitude] = "lng" (mapClick)="markMap">
+  <agm-marker *ngFor="let location of data" [latitude]="location.point_lat" [longitude]="location.point_lng">
+</agm-marker>
+   </agm-map>

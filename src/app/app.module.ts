@@ -20,7 +20,7 @@ import { DogParkSearchComponent } from './dog-park/dog-park-search/dog-park-sear
 import { DogParkSpotlightComponent } from './dog-park/dog-park-spotlight/dog-park-spotlight.component';
 import { DogParkMapComponent } from './dog-park/dog-park-map/dog-park-map.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { AgmCoreModule} from '@agm/core'
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +41,9 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
+    AgmCoreModule.forRoot({
+     apiKey: 'AIzaSyB24fQ8s1VLrw6EhUsyQP74eLvMWE1LYTw'
+    }),
     RouterModule.forRoot([
       {path: "home", component: HomeComponent},
       {path: "dogpark", component: DogParkComponent},
