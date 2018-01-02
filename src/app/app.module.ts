@@ -18,6 +18,8 @@ import { DogParkService } from './services/dogpark.service';
 import { PlayAreaAlertsComponent } from './play-area/play-area-alerts/play-area-alerts.component';
 import { DogParkSearchComponent } from './dog-park/dog-park-search/dog-park-search.component';
 import { DogParkSpotlightComponent } from './dog-park/dog-park-spotlight/dog-park-spotlight.component';
+import { DogParkMapComponent } from './dog-park/dog-park-map/dog-park-map.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { DogParkSpotlightComponent } from './dog-park/dog-park-spotlight/dog-par
     PlayAreaOverviewComponent,
     PlayAreaAlertsComponent,
     DogParkSearchComponent,
-    DogParkSpotlightComponent
+    DogParkSpotlightComponent,
+    DogParkMapComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
