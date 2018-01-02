@@ -20,6 +20,8 @@ import { DogParkSearchComponent } from './dog-park/dog-park-search/dog-park-sear
 import { DogParkSpotlightComponent } from './dog-park/dog-park-spotlight/dog-park-spotlight.component';
 import { PlayAreaMapComponent } from './play-area/play-area-map/play-area-map.component';
 import { AgmCoreModule } from '@agm/core'
+import { DogParkMapComponent } from './dog-park/dog-park-map/dog-park-map.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { AgmCoreModule } from '@agm/core'
     PlayAreaAlertsComponent,
     DogParkSearchComponent,
     DogParkSpotlightComponent,
-    PlayAreaMapComponent
+    PlayAreaMapComponent,
+    DogParkMapComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
