@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    Search Playarea
+  </div>
+  <div class="card-block">
+    <div class="md-form">
+        <i class="glyphicon glyphicon-map-marker"></i>
+        <input #location type="search" id="id_location" class="form-control" [(ngModel)]="Search" mdbActive>
+        <label for="id_location">Give a playarea</label>
+    </div>
+    <button type="button" class="button" value="Search For PlayArea" (click)="playAreaSearch()">Search For PlayArea</button>
+      <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+        <agm-marker [latitude]="latitudemark" [longitude]="longitudemark"></agm-marker>
+      </agm-map>
+    </div>
+</div>

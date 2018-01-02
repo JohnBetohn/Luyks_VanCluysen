@@ -18,6 +18,8 @@ import { DogParkService } from './services/dogpark.service';
 import { PlayAreaAlertsComponent } from './play-area/play-area-alerts/play-area-alerts.component';
 import { DogParkSearchComponent } from './dog-park/dog-park-search/dog-park-search.component';
 import { DogParkSpotlightComponent } from './dog-park/dog-park-spotlight/dog-park-spotlight.component';
+import { PlayAreaMapComponent } from './play-area/play-area-map/play-area-map.component';
+import { AgmCoreModule } from '@agm/core'
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { DogParkSpotlightComponent } from './dog-park/dog-park-spotlight/dog-par
     PlayAreaOverviewComponent,
     PlayAreaAlertsComponent,
     DogParkSearchComponent,
-    DogParkSpotlightComponent
+    DogParkSpotlightComponent,
+    PlayAreaMapComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,10 @@ import { DogParkSpotlightComponent } from './dog-park/dog-park-spotlight/dog-par
       {path: "**", component: PageNotFoundComponent}
     ], {useHash: true}),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB24fQ8s1VLrw6EhUsyQP74eLvMWE1LYTw' 
+    })
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [
