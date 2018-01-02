@@ -41,12 +41,10 @@ export class PlayAreaMapComponent implements OnInit {
     for (let index = 0; index < this.playareas.data.length; index++) {
       const element = this.playareas.data[index];
       if(this._search == element.naam){
-        this.latitudemark = +element.x_coord;
-        this.longitudemark = +element.y_coord;
+        this.latitudemark =  (Number(element.point_lat));
+        this.longitudemark =  (Number(element.point_lng));
       }
     }
-    this.marker.latitude = this.latitudemark;
-    this.marker.longitude = this.longitudemark;
   }
 
 }
