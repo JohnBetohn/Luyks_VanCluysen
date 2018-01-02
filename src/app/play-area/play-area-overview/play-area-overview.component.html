@@ -14,12 +14,14 @@
             <tr>
                 <th>Name</th>
                 <th>Location</th>
+                <th>Devices</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let playarea of data">
                 <td>{{playarea.naam}}</td>
                 <td>{{playarea.straat}} {{playarea.huisnummer}}, {{playarea.district}}</td>
+                <td>{{playarea.toestellen}}</td>
             </tr>
         </tbody>
     </table>
