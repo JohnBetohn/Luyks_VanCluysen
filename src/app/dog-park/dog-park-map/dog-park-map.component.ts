@@ -8,9 +8,11 @@ import { Datum, IDogParkRoot, DogParkService } from '../../services/dogpark.serv
 })
 export class DogParkMapComponent implements OnInit {
   dogparks: IDogParkRoot;
-  data: Datum[];
+  datamap: Datum[];
   lat=  51.211708;
   lng= 4.412532;
+  latmap: Number[];
+  lngmap: Number[];
   constructor(private _svc: DogParkService) {   
    }
 
@@ -18,11 +20,12 @@ export class DogParkMapComponent implements OnInit {
     this._svc.getList().subscribe(result => this.dogparks = result);
    }
 markMap(){
+  this.datamap = []; 
   for (let index = 0; index < this.dogparks.data.length; index++) {
     let element = this.dogparks.data[index];
-      this.data.push(element);
-      this.lat = (Number(element.point_lat));
-      this.lng = (Number(element.point_lng));
+    element.latitude = Number(element.point_lat);
+    element.longitude = Number(element.point_lng);
+    this.datamap.push(element);
   }
 }
 }

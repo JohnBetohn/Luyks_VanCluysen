@@ -52,6 +52,8 @@ export interface Datum {
     quotering_algemeen: string;
     shape?: any;
     objectid: number;
+    latitude: number;
+    longitude: number;
 }
 
 export interface IDogParkRoot {

@@ -17,7 +17,6 @@ export class DogParkSpotlightComponent implements OnInit {
 
  ngOnInit() {
   this._svc.getList().subscribe(result => this.dogparks = result);
-  setTimeout(this.Spotlight,1000);
   }
   Spotlight() {
     this.data = [];    
