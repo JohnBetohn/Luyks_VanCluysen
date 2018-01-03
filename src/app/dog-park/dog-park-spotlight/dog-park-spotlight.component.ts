@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DogParkService, IDogParkRoot, Datum } from '../../services/dogpark.service';
+import { DogParkService, IDogParkRoot, DogDatum } from '../../services/dogpark.service';
 import * as _ from "lodash";
 
 @Component({
@@ -8,8 +8,8 @@ import * as _ from "lodash";
   styleUrls: ['./dog-park-spotlight.component.scss']
 })
 export class DogParkSpotlightComponent implements OnInit {
-  spotlight: Datum;
-  data: Datum[];
+  spotlight: DogDatum;
+  data: DogDatum[];
   dogparks: IDogParkRoot;
   constructor(private _svc: DogParkService) { 
         

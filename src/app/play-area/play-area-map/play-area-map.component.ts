@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
-import { Datum, PlayAreaService, IPlayAreaRoot } from '../../services/play-area.service';
+import { PlayDatum, PlayAreaService, IPlayAreaRoot } from '../../services/play-area.service';
 import { AgmMarker } from '@agm/core/directives/marker';
 
 @Component({

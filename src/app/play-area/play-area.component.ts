@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Datum, PlayAreaService, IPlayAreaRoot } from '../services/play-area.service';
+import { PlayDatum, PlayAreaService, IPlayAreaRoot } from '../services/play-area.service';
 
 @Component({
   selector: 'app-play-area',

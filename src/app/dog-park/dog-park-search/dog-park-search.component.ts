@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DogParkService, IDogParkRoot, Datum } from '../../services/dogpark.service';
+import { DogParkService, IDogParkRoot, DogDatum } from '../../services/dogpark.service';
 
 @Component({
   selector: 'app-dog-park-search',
@@ -8,7 +8,7 @@ import { DogParkService, IDogParkRoot, Datum } from '../../services/dogpark.serv
 })
 export class DogParkSearchComponent implements OnInit {
   dogparks: IDogParkRoot;
-  data: Datum[];
+  data: DogDatum[];
   constructor(private _svc: DogParkService) { }
   private _search: string = "Enter postcode"
   ngOnInit() {

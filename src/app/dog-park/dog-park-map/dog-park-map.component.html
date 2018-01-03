@@ -1,10 +1,10 @@
 <div class="card">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB24fQ8s1VLrw6EhUsyQP74eLvMWE1LYTw&libraries=places"></script>
   <div class="card-header">
     Show Dog Areas on Map
   </div>
   <div class="card-block">
-    <button type="button" class="button" value="Search For Dog Areas" (click)="markMap()">Show all dogparks</button>
-      <agm-map [latitude]="lat" [longitude]="lng">
+      <button (click)="getLocation">Get Location</button>      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
         <agm-marker *ngFor="let location of datamap" [latitude]='location.latitude' [longitude]='location.longitude'></agm-marker>  
           </agm-map>
     </div>

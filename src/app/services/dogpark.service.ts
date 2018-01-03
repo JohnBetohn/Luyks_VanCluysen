@@ -19,7 +19,7 @@ export interface Paging {
     pageSize: number;
 }
 
-export interface Datum {
+export interface DogDatum {
     id: string;
     point_lat: string;
     point_lng: string;
@@ -58,5 +58,5 @@ export interface Datum {
 
 export interface IDogParkRoot {
     paging: Paging;
-    data: Datum[];
+    data: DogDatum[];
 }

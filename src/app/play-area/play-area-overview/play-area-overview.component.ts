@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Datum, PlayAreaService, IPlayAreaRoot } from '../../services/play-area.service';
+import { PlayDatum, PlayAreaService, IPlayAreaRoot } from '../../services/play-area.service';
 
 @Component({
   selector: 'app-play-area-overview',
@@ -9,7 +9,7 @@ import { Datum, PlayAreaService, IPlayAreaRoot } from '../../services/play-area.
 export class PlayAreaOverviewComponent implements OnInit {
 
   playareas : IPlayAreaRoot;
-  data: Datum[];
+  data: PlayDatum[];
   _search : string;
 
   constructor(private _svc : PlayAreaService) { }

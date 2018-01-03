@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Datum, DogParkService, IDogParkRoot } from '../services/dogpark.service'
+import { DogDatum, DogParkService, IDogParkRoot } from '../services/dogpark.service'
 
 @Component({
   selector: 'app-dog-park',
@@ -9,7 +9,7 @@ import { Datum, DogParkService, IDogParkRoot } from '../services/dogpark.service
 export class DogParkComponent implements OnInit {
   
     dogparks : IDogParkRoot;
-    data: Datum[];
+    data: DogDatum[];
   
     constructor(private _svc : DogParkService) { 
       this._svc.getList().subscribe(result => this.dogparks = result);
