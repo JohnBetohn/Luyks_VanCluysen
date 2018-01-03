@@ -20,7 +20,7 @@ export class PlayAreaService {
         pageSize: number;
     }
 
-    export interface Datum {
+    export interface PlayDatum {
         objectid: number;
         point_lat: string;
         point_lng: string;
@@ -38,9 +38,11 @@ export class PlayAreaService {
         x_coord: string;
         y_coord: string;
         gisid: string;
+        latitude: number;
+        longitude: number;
     }
 
     export interface IPlayAreaRoot {
         paging: Paging;
-        data: Datum[];
+        data: PlayDatum[];
     }

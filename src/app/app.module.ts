@@ -23,6 +23,7 @@ import { AgmCoreModule } from '@agm/core'
 import { DogParkMapComponent } from './dog-park/dog-park-map/dog-park-map.component';
 import { FooterComponent } from './footer/footer.component';
 import { PlayAreaWeatherComponent } from './play-area/play-area-weather/play-area-weather.component';
+import { CombomapComponent } from './combomap/combomap.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { PlayAreaWeatherComponent } from './play-area/play-area-weather/play-are
     PlayAreaMapComponent,
     DogParkMapComponent,
     FooterComponent,
-    PlayAreaWeatherComponent
+    PlayAreaWeatherComponent,
+    CombomapComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ import { PlayAreaWeatherComponent } from './play-area/play-area-weather/play-are
       {path: "home", component: HomeComponent},
       {path: "dogpark", component: DogParkComponent},
       {path: "playarea", component: PlayAreaComponent},
+      {path: "combomap", component: CombomapComponent},
       {path: "", component: HomeComponent},
       {path: "**", component: PageNotFoundComponent}
     ], {useHash: true}),

@@ -1,16 +1,11 @@
 <div class="card">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB24fQ8s1VLrw6EhUsyQP74eLvMWE1LYTw&libraries=places"></script>
   <div class="card-header">
-    Search Playarea
+    Show Dog Areas on Map
   </div>
   <div class="card-block">
-    <div class="md-form">
-        <i class="glyphicon glyphicon-map-marker"></i>
-        <input #location type="search" id="id_location" class="form-control" [(ngModel)]="Search" mdbActive>
-        <label for="id_location">Search by district</label>
-    </div>
-    <button type="button" class="button" value="Search For PlayArea" (click)="markMap()">Search For PlayArea</button>
-      <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
-        <agm-marker [latitude]="latitudemark" [longitude]="longitudemark"></agm-marker>
-      </agm-map>
+      <button (click)="getLocation">Get Location</button>      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+        <agm-marker *ngFor="let location of datamap" [latitude]='location.latitude' [longitude]='location.longitude'></agm-marker>  
+          </agm-map>
     </div>
 </div>

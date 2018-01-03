@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-block">
+      <button type="button" class="button" value="Search For Dog Areas"(click)="markDogparks()">Show all dogparks</button>
+      <button type="button" class="button" value="Search For Dog Areas" (click)="markPlayareas()">Show all playareas</button>
+      <button type="button" class="button" value="Search For Dog Areas" (click)="markBoth()">Show both</button>
+        <agm-map [latitude]="lat" [longitude]="lng">
+            <agm-marker *ngFor="let location of DogData" [label]="dogLabel" [latitude]='location.latitude' [longitude]='location.longitude'></agm-marker> 
+            <agm-marker *ngFor="let location of PlayData" [label]="dogLabel" [latitude]='location.latitude' [longitude]='location.longitude'></agm-marker>  
+            
+            </agm-map>
+      </div>
+  </div>
+  
