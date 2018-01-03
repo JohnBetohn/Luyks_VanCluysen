@@ -22,7 +22,7 @@ export class PlayAreaOverviewComponent implements OnInit {
     this.data = [];
     for (let index = 0; index < this.playareas.data.length; index++) {
       let element = this.playareas.data[index];
-      if(this._search == element.naam || this._search == element.district || this._search == element.postcode || this._search == element.straat){
+      if(this._search == element.naam || this._search == element.postcode || this._search == element.district || this._search == element.postcode || this._search == element.straat){
         this.data.push(element);
       } //else this.data = this.playareas.data;
     }

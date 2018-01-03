@@ -22,6 +22,7 @@ import { PlayAreaMapComponent } from './play-area/play-area-map/play-area-map.co
 import { AgmCoreModule } from '@agm/core'
 import { DogParkMapComponent } from './dog-park/dog-park-map/dog-park-map.component';
 import { FooterComponent } from './footer/footer.component';
+import { PlayAreaWeatherComponent } from './play-area/play-area-weather/play-area-weather.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { FooterComponent } from './footer/footer.component';
     DogParkSpotlightComponent,
     PlayAreaMapComponent,
     DogParkMapComponent,
-    FooterComponent
+    FooterComponent,
+    PlayAreaWeatherComponent
   ],
   imports: [
     BrowserModule,
