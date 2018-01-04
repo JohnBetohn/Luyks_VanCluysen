@@ -17,7 +17,8 @@ export class DogParkSearchComponent implements OnInit {
     this.data = [];
     for (let index = 0; index < this.dogparks.data.length; index++) {
       let element = this.dogparks.data[index];
-      if (element.postcode == this._search || element.district == this._search || element.straatnaam == this._search) {
+      let lowersearch = this._search.toLowerCase();
+      if (element.postcode == this._search || element.district.toLowerCase() == lowersearch || element.straatnaam.toLowerCase() == lowersearch) {
         this.data.push(element);
       }
     }
