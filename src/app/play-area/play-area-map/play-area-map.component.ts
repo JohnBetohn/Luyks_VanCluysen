@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { PlayDatum, PlayAreaService, IPlayAreaRoot } from '../../services/play-area.service';
 import { AgmMarker } from '@agm/core/directives/marker';
+import { IWeatherResult, WeatherService } from '../../services/weather.service';
+import * as mathjs from "mathjs"
+
 @Component({
   selector: 'app-play-area-map',
   templateUrl: './play-area-map.component.html',
@@ -9,7 +12,7 @@ import { AgmMarker } from '@agm/core/directives/marker';
 })
 export class PlayAreaMapComponent implements OnInit {
 
-  constructor(private _svc : PlayAreaService) { }
+  constructor(private _svc : PlayAreaService, private _weather : WeatherService) { }
 
   latitude : number;
   longitude : number;
@@ -19,6 +22,7 @@ export class PlayAreaMapComponent implements OnInit {
   latitudemark : number;
   longitudemark : number;
   marker : AgmMarker;
+  weather : IWeather;
 
   ngOnInit() {
     this._svc.getList().subscribe(result => this.playareas = result);
@@ -44,6 +48,19 @@ export class PlayAreaMapComponent implements OnInit {
         this.longitudemark =  (Number(element.point_lng));
       }
     }
+    this._weather.getCurrentWeatherAt(this._search).subscribe(result => this.weather = this.WeatherResult(result));
   }
 
+  private WeatherResult(result: IWeatherResult): IWeather{
+    return {
+      description: result.weather[0].description,
+      temperature: +mathjs.unit(result.main.temp, "K").toNumber("degC").toFixed(1)
+    };
+  }
+
+}
+
+interface IWeather {
+  description: string;
+  temperature: number;
 }

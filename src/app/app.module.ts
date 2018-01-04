@@ -22,10 +22,11 @@ import { PlayAreaMapComponent } from './play-area/play-area-map/play-area-map.co
 import { AgmCoreModule } from '@agm/core'
 import { DogParkMapComponent } from './dog-park/dog-park-map/dog-park-map.component';
 import { FooterComponent } from './footer/footer.component';
-import { PlayAreaWeatherComponent } from './play-area/play-area-weather/play-area-weather.component';
 import { CombomapComponent } from './combomap/combomap.component';
 import { DogParkRandomComponent } from './dog-park/dog-park-random/dog-park-random.component';
 import { MapsService } from './services/map.service';
+import { PlayAreaClosestComponent } from './play-area/play-area-closest/play-area-closest.component';
+import { WeatherService } from './services/weather.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,9 +44,9 @@ import { MapsService } from './services/map.service';
     PlayAreaMapComponent,
     DogParkMapComponent,
     FooterComponent,
-    PlayAreaWeatherComponent,
     CombomapComponent,
-    DogParkRandomComponent
+    DogParkRandomComponent,
+    PlayAreaClosestComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +72,8 @@ import { MapsService } from './services/map.service';
   providers: [
     PlayAreaService,
     DogParkService,
-    MapsService
+    MapsService,
+    WeatherService
   ],
   bootstrap: [AppComponent]
 })
