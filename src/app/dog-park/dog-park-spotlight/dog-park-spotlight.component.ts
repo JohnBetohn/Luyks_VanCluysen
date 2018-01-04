@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DogParkService, IDogParkRoot, DogDatum } from '../../services/dogpark.service';
 import * as _ from "lodash";
 
+
 @Component({
   selector: 'app-dog-park-spotlight',
   templateUrl: './dog-park-spotlight.component.html',
@@ -11,21 +12,31 @@ export class DogParkSpotlightComponent implements OnInit {
   spotlight: DogDatum;
   data: DogDatum[];
   dogparks: IDogParkRoot;
-  constructor(private _svc: DogParkService) { 
-        
-  }
+  lat=  51.211708;
+  lng= 4.412532;
 
- ngOnInit() {
-  this._svc.getList().subscribe(result => this.dogparks = result);
+  zoom : number;
+  
+  constructor(private _svc: DogParkService) { 
+    this.zoom = 13;
+    
   }
-  Spotlight() {
+ ngOnInit() {
+  this._svc.getList().subscribe(result => this.dogparks = result); 
+ }
+ Spotlight() {  
+   
     this.data = [];    
      for (let index = 0; index < this.dogparks.data.length; index++) {
-      let element = this.dogparks.data[index];
-      if (element.netheid == "goed") {
+      let element =  this.dogparks.data[index];
+      if (element.bezoekersaantal == "zeer hoog") {
+        element.latitude = Number(element.point_lat);
+        element.longitude = Number(element.point_lng);
         this.data.push(element);
       }
     }
-    this.spotlight = this.data[_.random(0, this.data.length - 1)]
+    this.spotlight = this.data[0]
+    this.lat = Number(this.spotlight.point_lat);
+    this.lng = Number(this.spotlight.point_lng);
   }
   }

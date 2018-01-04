@@ -24,6 +24,8 @@ import { DogParkMapComponent } from './dog-park/dog-park-map/dog-park-map.compon
 import { FooterComponent } from './footer/footer.component';
 import { PlayAreaWeatherComponent } from './play-area/play-area-weather/play-area-weather.component';
 import { CombomapComponent } from './combomap/combomap.component';
+import { DogParkRandomComponent } from './dog-park/dog-park-random/dog-park-random.component';
+import { MapsService } from './services/map.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,8 @@ import { CombomapComponent } from './combomap/combomap.component';
     DogParkMapComponent,
     FooterComponent,
     PlayAreaWeatherComponent,
-    CombomapComponent
+    CombomapComponent,
+    DogParkRandomComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,8 @@ import { CombomapComponent } from './combomap/combomap.component';
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [
     PlayAreaService,
-    DogParkService
+    DogParkService,
+    MapsService
   ],
   bootstrap: [AppComponent]
 })

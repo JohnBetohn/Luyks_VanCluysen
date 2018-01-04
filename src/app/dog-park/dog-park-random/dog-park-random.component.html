@@ -1,0 +1,27 @@
+
+<div class="container">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB24fQ8s1VLrw6EhUsyQP74eLvMWE1LYTw&libraries=places"></script>
+    
+    <div class="row">
+        <div class="col-sm-6 col-md-5 ">
+            <div class="card">                    
+                <h3 class="card-header primary-color white-text">Random Park</h3>
+                <div class="card-body">
+                    <h4 class="card-title">{{randompark?.naam}}</h4>
+                    <p class="card-text">Adres: {{randompark?.straatnaam}} <br>
+                        District: {{randompark?.district}} <br>
+                        Netheid: {{randompark?.netheid}} <br>
+                        Bezoekersaantal: {{randompark?.bezoekersaantal}} </p>
+                   <a class="btn btn-primary" name="submitbutton" (click)="getRandom()" > Search for a random clean park </a> 
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-5">
+            <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+                <agm-marker  [latitude]='randompark?.latitude' [longitude]='randompark?.longitude'  [zoom]="zoom"></agm-marker>  
+                  </agm-map>
+                 
+        </div>
+    </div>
+
+</div>

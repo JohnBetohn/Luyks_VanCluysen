@@ -54,4 +54,8 @@ for (let index = 0; index < this.dogparks.data.length; index++) {
   this.DogData.push(element);
 }
 }
+clear() {
+  this.PlayData = [];
+  this.DogData = [];
+}
 }
