@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DogParkService, IDogParkRoot, DogDatum } from '../../services/dogpark.service';
-
 @Component({
   selector: 'app-dog-park-search',
   templateUrl: './dog-park-search.component.html',
@@ -10,7 +9,7 @@ export class DogParkSearchComponent implements OnInit {
   dogparks: IDogParkRoot;
   data: DogDatum[];
   constructor(private _svc: DogParkService) { }
-  private _search: string = "Enter postcode"
+  private _search: string = "Search by Postcode, District or streetname"
   ngOnInit() {
     this._svc.getList().subscribe(result => this.dogparks = result);
   }
@@ -18,7 +17,8 @@ export class DogParkSearchComponent implements OnInit {
     this.data = [];
     for (let index = 0; index < this.dogparks.data.length; index++) {
       let element = this.dogparks.data[index];
-      if (element.postcode == this._search || element.district == this._search || element.straatnaam == this._search) {
+      let lowersearch = this._search.toLowerCase();
+      if (element.postcode == this._search || element.district.toLowerCase() == lowersearch || element.straatnaam.toLowerCase() == lowersearch) {
         this.data.push(element);
       }
     }

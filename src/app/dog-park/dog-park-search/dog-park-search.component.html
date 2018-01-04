@@ -1,31 +1,25 @@
 <div class="card">
-  <div class="card-body">
-
-      <div class="table-wrapper-2">
-          <input type="text" class="form-control" [(ngModel)]="Search">        
-          <!--Table-->
-          <table class="table table-responsive">
-              <thead class="mdb-color lighten-4">
-                  <tr>
-                      <th class="th-lg">Postcode</th>
-                      <th class="th-lg">District</th>
-                      <th class="th-lg">Straatnaam</th>
-                      <th class="th-lg">Bezoekersaantal</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr *ngFor="let item of data">
-                      <td scope="row">{{item.postcode}}</td>
-                      <td>{{item.district}}</td>
-                      <td>{{item.straatnaam}}</td>
-                      <td>{{item.bezoekersaantal}}</td>
-                  </tr>
-              </tbody>
-          </table>
-          <!--Table-->
-
-      </div>
-
-  </div>
+    <div class="card-body">
+        <div class="table-wrapper-2">
+            <input type="text" class="form-control" [(ngModel)]="Search">
+            <table class="table table-responsive">
+                <thead class="mdb-color lighten-4">
+                    <tr>
+                        <th class="th-lg">Postcode</th>
+                        <th class="th-lg">District</th>
+                        <th class="th-lg">Straatnaam</th>
+                        <th class="th-lg">Bezoekersaantal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of data">
+                        <td scope="row">{{item.postcode}}</td>
+                        <td>{{item.district}}</td>
+                        <td>{{item.straatnaam}}</td>
+                        <td>{{item.bezoekersaantal}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
-           

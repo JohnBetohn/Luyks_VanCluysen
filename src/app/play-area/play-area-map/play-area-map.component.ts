@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { PlayDatum, PlayAreaService, IPlayAreaRoot } from '../../services/play-area.service';
 import { AgmMarker } from '@agm/core/directives/marker';
-
 @Component({
   selector: 'app-play-area-map',
   templateUrl: './play-area-map.component.html',

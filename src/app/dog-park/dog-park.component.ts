@@ -7,10 +7,8 @@ import { DogDatum, DogParkService, IDogParkRoot } from '../services/dogpark.serv
   styleUrls: ['./dog-park.component.scss']
 })
 export class DogParkComponent implements OnInit {
-  
     dogparks : IDogParkRoot;
     data: DogDatum[];
-  
     constructor(private _svc : DogParkService) { 
       this._svc.getList().subscribe(result => this.dogparks = result);
     }
