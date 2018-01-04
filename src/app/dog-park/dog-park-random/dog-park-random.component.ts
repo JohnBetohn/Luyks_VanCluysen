@@ -7,26 +7,22 @@ import * as _ from "lodash";
   styleUrls: ['./dog-park-random.component.scss']
 })
 export class DogParkRandomComponent implements OnInit {
-
   constructor(private _svc: DogParkService) {
-    this.zoom = 13;    
-   }
-
+    this.zoom = 13;
+  }
   ngOnInit() {
-    this._svc.getList().subscribe(result => this.dogparks = result);     
+    this._svc.getList().subscribe(result => this.dogparks = result);
   }
   randompark: DogDatum;
   data: DogDatum[];
   dogparks: IDogParkRoot;
-  lat=  51.2194475;
-  lng= 4.40246430000002;
-
-  zoom : number;
-  
- getRandom() {  
-    this.data = [];    
-     for (let index = 0; index < this.dogparks.data.length; index++) {
-      let element =  this.dogparks.data[index];
+  lat = 51.2194475;
+  lng = 4.40246430000002;
+  zoom: number;
+  getRandom() {
+    this.data = [];
+    for (let index = 0; index < this.dogparks.data.length; index++) {
+      let element = this.dogparks.data[index];
       if (element.netheid == "goed" && element.bezoekersaantal != null) {
         element.latitude = Number(element.point_lat);
         element.longitude = Number(element.point_lng);
@@ -38,4 +34,4 @@ export class DogParkRandomComponent implements OnInit {
     this.lat = Number(this.randompark.point_lat);
     this.lng = Number(this.randompark.point_lng);
   }
-  }
+}
