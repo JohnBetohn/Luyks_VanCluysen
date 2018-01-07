@@ -19,7 +19,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let playarea of data">
-                <td>{{playarea.naam}}</td>
+                <td>{{playarea.naam | uppercase}}</td>
                 <td>{{playarea.straat}} {{playarea.huisnummer}}, {{playarea.district}}</td>
                 <td>{{playarea.opmerking}}</td>
             </tr>
