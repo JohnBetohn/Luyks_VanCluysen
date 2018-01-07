@@ -1,11 +1,11 @@
 <div class="container">
     <div class="row">
         <div class="card">
-            <h3 class="card-header primary-color white-text">Featured</h3>
+            <h3 class="card-header primary-color white-text">{{SpotlightTitle | uppercase}}</h3>
             <div class="card-body">
                 <h4 class="card-title">Hondenpark: {{spotlight?.naam}}</h4>
-                <p class="card-text">Adres: {{spotlight?.straatnaam}}
-                    <br> District: {{spotlight?.district}}
+                <p class="card-text">Adres: {{spotlight?.straatnaam | lowercase}}
+                    <br> District: {{spotlight?.district  | lowercase}}
                     <br> Netheid: {{spotlight?.netheid}}
                     <br> Materiaal: {{spotlight?.materiaal_afsluiting}} </p>
             </div>

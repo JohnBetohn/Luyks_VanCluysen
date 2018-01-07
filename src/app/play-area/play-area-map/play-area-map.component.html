@@ -9,7 +9,7 @@
         <label for="id_location">Give the name of a playarea</label>
     </div>
     <button type="button" class="btn btn-primary" value="Search For PlayArea" (click)="playAreaSearch()">Search For PlayArea</button>
-      <p>Weather: <strong>{{weather.description}} </strong></p> <p> Temperature: <strong>{{weather.temperature}}°C</strong></p>
+      <p>Weather: <strong>{{weather?.description}} </strong></p> <p> Temperature: <strong>{{weather?.temperature}}°C</strong></p>
       <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
         <agm-marker [latitude]="latitudemark" [longitude]="longitudemark"></agm-marker>
       </agm-map>

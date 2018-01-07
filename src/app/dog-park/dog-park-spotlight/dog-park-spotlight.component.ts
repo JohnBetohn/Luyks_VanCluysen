@@ -15,6 +15,7 @@ export class DogParkSpotlightComponent implements OnInit {
   lat = 51.211708;
   lng = 4.412532;
   zoom: number;  
+  SpotlightTitle : String = "Featured"
   constructor(private _svc: DogParkService) {
     this.zoom = 13;
     this._svc.getList().subscribe(result => this.Spotlight(result));

@@ -16,6 +16,7 @@ export class DogParkRandomComponent implements OnInit {
   lat = 51.2194475;
   lng = 4.40246430000002;
   zoom: number;
+  RandomTitle : String = "Random Park"
   ngOnInit() {
     this._svc.getList().subscribe(result => this.getRandom(result));
   }

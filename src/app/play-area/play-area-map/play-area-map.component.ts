@@ -57,7 +57,7 @@ export class PlayAreaMapComponent implements OnInit {
   private WeatherResult(result: IWeatherResult): IWeather{
     return {
       description: result.weather[0].description,
-      temperature: +mathjs.unit(result.main.temp, "K").toNumber("degC").toFixed(1)
+      temperature: +mathjs.unit(result.main.temp, "K").toNumber("degC").toFixed(1)      
     };
   }
 
