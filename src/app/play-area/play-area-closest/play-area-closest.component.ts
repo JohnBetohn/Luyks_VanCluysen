@@ -60,6 +60,7 @@ export class PlayAreaClosestComponent implements OnInit {
 
   getClosest() {
     this.datamap = [];
+    this.closest = [];
     for (let index = 0; index < this.playareas.data.length; index++) {
       let element = this.playareas.data[index];
       element.latitude = Number(element.point_lat);
