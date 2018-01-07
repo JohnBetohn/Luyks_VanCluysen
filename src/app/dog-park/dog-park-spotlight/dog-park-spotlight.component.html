@@ -1,7 +1,11 @@
 <div class="container">
-
     <div class="row">
         <div class="card">
+                <script type="text/javascript">
+                    $window.onload = function() {
+                                            Spotlight();
+                    };
+            </script>
             <h3 class="card-header primary-color white-text">Featured</h3>
             <div class="card-body">
                 <h4 class="card-title">Hondenpark: {{spotlight?.naam}}</h4>
@@ -9,7 +13,7 @@
                     <br> District: {{spotlight?.district}}
                     <br> Netheid: {{spotlight?.netheid}}
                     <br> Materiaal: {{spotlight?.materiaal_afsluiting}} </p>
-                <a class="btn btn-primary" name="submitbutton" (click)="Spotlight()">Show Featured DogArea</a>
+                <a class="btn btn-primary" name="submitbutton" (click)="Spotlight()">Show Featured</a>
             </div>
         </div>
     </div>

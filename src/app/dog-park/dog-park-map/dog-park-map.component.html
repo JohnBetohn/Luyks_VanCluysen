@@ -5,7 +5,7 @@
     <a class="btn btn-primary" name="submitbutton" (click)="getClosest()"> Search for closest DogArea </a>
     {{closest?.naam}} {{closest?.district}}
     <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-      <agm-marker [latitude]='lat' [longitude]='lng'></agm-marker>
+      <agm-marker [latitude]='lat' [longitude]='lng' [zoom]="zoom"></agm-marker>
     </agm-map>
   </div>
 </div>
