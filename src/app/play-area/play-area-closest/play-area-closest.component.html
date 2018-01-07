@@ -2,10 +2,11 @@
   <script src="maps.googleapis.com/maps/api/js" ; type="text/javascript"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB24fQ8s1VLrw6EhUsyQP74eLvMWE1LYTw&libraries=places"></script>
   <div class="card-block">
-    <a class="btn btn-primary" name="submitbutton" (click)="getClosest()"> Search for closest PlayArea </a>
+    <a class="btn btn-primary" name="submitbutton" (click)="getClosest()"> Search for PlayArea close to you </a>
     {{closest?.naam}} {{closest?.district}}
     <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
       <agm-marker [latitude]='lat' [longitude]='lng'></agm-marker>
+      <agm-marker *ngFor="let location of Closest" [label]="dogLabel" [latitude]='location.latitude' [longitude]='location.longitude'></agm-marker>
     </agm-map>
   </div>
 </div>

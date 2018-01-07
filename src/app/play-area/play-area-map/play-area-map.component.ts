@@ -23,6 +23,7 @@ export class PlayAreaMapComponent implements OnInit {
   longitudemark : number;
   marker : AgmMarker;
   weather : IWeather;
+  loc : number[]
 
   ngOnInit() {
     this._svc.getList().subscribe(result => this.playareas = result);
@@ -44,11 +45,13 @@ export class PlayAreaMapComponent implements OnInit {
     for (let index = 0; index < this.playareas.data.length; index++) {
       const element = this.playareas.data[index];
       if(this._search == element.naam){
+        this.latitude =  (Number(element.point_lat));
+        this.longitude =  (Number(element.point_lng));
         this.latitudemark =  (Number(element.point_lat));
         this.longitudemark =  (Number(element.point_lng));
+        this._weather.getCurrentWeatherAt(this.latitude, this.longitude).subscribe(result => this.weather = this.WeatherResult(result));
       }
     }
-    this._weather.getCurrentWeatherAt(this._search).subscribe(result => this.weather = this.WeatherResult(result));
   }
 
   private WeatherResult(result: IWeatherResult): IWeather{

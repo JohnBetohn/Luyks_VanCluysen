@@ -18,7 +18,7 @@ export class PlayAreaClosestComponent implements OnInit {
   latmap: Number[];
   lngmap: Number[];
   zoom: number;
-  closest: PlayDatum;
+  closest: PlayDatum[];
 
   constructor(private _svc: PlayAreaService, private _loader: MapsAPILoader, private _zone: NgZone,
     private _mapsService: MapsService) {
@@ -65,18 +65,16 @@ export class PlayAreaClosestComponent implements OnInit {
       element.latitude = Number(element.point_lat);
       element.longitude = Number(element.point_lng);
       this.datamap.push(element);
-      var mindif = 99999;
+      var mindif = 2;
       for (let index = 0; index < this.playareas.data.length; ++index) {
         let element = this.playareas.data[index];
         var dif = this.PythagorasEquirectangular(this.lat, this.lng, element.latitude, element.longitude);
         if (dif < mindif) {
-          this.closest = element;
-          mindif = dif;
+          this.closest.push(element);
         }
       }
     }
-    this.lat = this.closest.latitude;
-    this.lng = this.closest.longitude;
+
   }
 
 }

@@ -9,13 +9,13 @@ export class WeatherService {
 
     getCurrentWeather() : Observable<IWeatherResult>
     {
-        return this._http.get<IWeatherResult>(`http://api.openweathermap.org/data/2.5/weather?q=Antwerpen&lang=nl&APPID=c29dbdf3ccc2d57a361ceaeac49d9e53`)
+        return this._http.get<IWeatherResult>(`http://api.openweathermap.org/data/2.5/weather?q=Antwerpen&lang=nl&APPID=99e3847f4a0cf5d92a43c287c1d5ec5e`)
         // .do(data => console.log(JSON.stringify(data)));
     }
 
-    getCurrentWeatherAt(location:string) : Observable<IWeatherResult>
+    getCurrentWeatherAt(lat:number, lon:number) : Observable<IWeatherResult>
     {
-        return this._http.get<IWeatherResult>(`http://api.openweathermap.org/data/2.5/weather?q=${location}&lang=nl&APPID=c29dbdf3ccc2d57a361ceaeac49d9e53`)
+        return this._http.get<IWeatherResult>(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=99e3847f4a0cf5d92a43c287c1d5ec5e `)
         // .do(data => console.log(JSON.stringify(data)));
     }
 }
