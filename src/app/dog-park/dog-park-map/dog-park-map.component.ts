@@ -29,7 +29,6 @@ export class DogParkMapComponent implements OnInit {
   ngOnInit() {
     this._svc.getList().subscribe(result => this.dogparks = result);
     this.callCurrentPosition();
-    this.getClosest();
   }
 
   callCurrentPosition() {

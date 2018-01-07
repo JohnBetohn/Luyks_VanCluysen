@@ -14,26 +14,24 @@ export class DogParkSpotlightComponent implements OnInit {
   data: DogDatum[];
   lat = 51.211708;
   lng = 4.412532;
-  zoom: number;
-  dogpark: IDogParkRoot;
-  
+  zoom: number;  
   constructor(private _svc: DogParkService) {
     this.zoom = 13;
-    this._svc.getList().subscribe(result => this.dogpark = result);
+    this._svc.getList().subscribe(result => this.Spotlight(result));
   }
   ngOnInit() {    
   }
-   Spotlight = () => { 
+   Spotlight(result : IDogParkRoot) { 
     this.data = [];
-    for (let index = 0; index < this.dogpark.data.length; index++) {
-      let element = this.dogpark.data[index];
+    for (let index = 0; index < result.data.length; index++) {
+      let element = result.data[index];
       if (element.bezoekersaantal == "zeer hoog") {
         element.latitude = Number(element.point_lat);
         element.longitude = Number(element.point_lng);
         this.data.push(element);
       }
     }
-    this.spotlight = this.data[0]
+    this.spotlight = this.data[4]
     this.lat = Number(this.spotlight.point_lat);
     this.lng = Number(this.spotlight.point_lng);
   }
